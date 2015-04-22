@@ -7,4 +7,8 @@ newsApp.controller("ArticlesCtrl", function ArticlesCtrl($scope, ArticlesFactory
     $scope.newLink = null;
   };
 
+  $scope.addLike = function(article) {
+    article.likes++;
+  };
+
 });

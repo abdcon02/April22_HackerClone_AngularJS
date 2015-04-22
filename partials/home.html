@@ -5,10 +5,10 @@
       <h1>Hacker News</h1>
       <form role="form" ng-submit="addArticle()">
         <div class="form-group">
-          <input ng-model="newArticle" type="text" class="form-control input-sm" placeholder="Enter Article Name">
+          <input ng-model="newArticle" type="text" class="form-control input-sm" placeholder="Enter Article Name" required>
         </div>
         <div class="form-group">
-          <input ng-model="newLink" type="text" class="form-control input-sm" placeholder="Enter Article Link">
+          <input ng-model="newLink" type="text" class="form-control input-sm" placeholder="Enter Article Link" required>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
@@ -18,9 +18,9 @@
       <h3>Latest Stories</h3>
 
       <div class="row">
-        <div ng-repeat="item in articles">
+        <div ng-repeat="item in filtered = (articles | orderBy:'-adminScore()')">
           <div class="col-xs-1">
-            <span class="glyphicon glyphicon-arrow-up"></span>
+            <span ng-click="addLike(item)" class="glyphicon glyphicon-arrow-up"></span>
           </div>
           <div class="col-xs-1">
             <p>
@@ -31,6 +31,9 @@
             <a href="{{item.link}}">{{item.name}}</a>
             <p>
               {{item.timeCreated()}}
+            </p>
+            <p>
+              {{item.adminScore()}}
             </p>
 
           </div>
