@@ -5,10 +5,10 @@
       <h1>Hacker News</h1>
       <form role="form" ng-submit="addArticle()">
         <div class="form-group">
-          <input ng-model="newArticle" type="text" class="form-control" placeholder="Enter Article Name">
+          <input ng-model="newArticle" type="text" class="form-control input-sm" placeholder="Enter Article Name">
         </div>
         <div class="form-group">
-          <input ng-model="newLink" type="text" class="form-control" placeholder="Enter Article Link">
+          <input ng-model="newLink" type="text" class="form-control input-sm" placeholder="Enter Article Link">
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
       </form>
@@ -29,6 +29,9 @@
           </div>
           <div class="col-xs-10">
             <a href="{{item.link}}">{{item.name}}</a>
+            <p>
+              {{item.timeCreated()}}
+            </p>
 
           </div>
         </div>
