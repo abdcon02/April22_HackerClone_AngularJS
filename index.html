@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang='en' ng-app=''>
+<html lang='en' ng-app='newsApp'>
     <head>
         <meta charset='UTF-8'>
-        <title>Course Roster</title>
+        <title>Hacker News</title>
         <script src='lib/angular.js'></script>
         <script src='lib/angular-ui-router.js'></script>
         <script src='app.js'></script>
+        <script src="controllers/ArticlesController.js"></script>
+        <script src="services/ArticlesFactory.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     </head>
     <body>
         <div class='container'>
+
             <div ui-view></div>
         </div>
     </body>
