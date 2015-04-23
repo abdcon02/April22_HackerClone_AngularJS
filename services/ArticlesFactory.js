@@ -1,4 +1,4 @@
-newsApp.factory('ArticlesFactory', function ArticlesFactory() {
+newsApp.factory('ArticlesFactory', function ArticlesFactory($http) {
   var factory = {};
   factory.articles = [];
 
@@ -23,6 +23,8 @@ newsApp.factory('ArticlesFactory', function ArticlesFactory() {
         return min + " minutes ago";
       }
   });
+
+  //$http.post('data/articles.json', "Hello");
   };
 
   return factory;
